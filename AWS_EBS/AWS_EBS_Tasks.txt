@@ -1,77 +1,56 @@
 Hands-On Practice Tasks
+============================================================================================================
 Task 1
-
 Create a 10 GB GP3 volume and attach it to EC2.
-
 Objectives:
-
 Create volume
 Attach volume
 Verify with lsblk
+============================================================================================================
 Task 2
-
 Format and Mount EBS Volume.
-
 Objectives:
-
 mkfs -t xfs
 mkdir
 mount
 df -Th
+============================================================================================================
 Task 3
-
 Configure Permanent Mount.
-
 Objectives:
-
 Update /etc/fstab
 Test using:
 mount -a
 Restart instance
 Verify mount persistence
+============================================================================================================
 Task 4
-
 Extend Existing EBS Volume.
-
 Objectives:
-
 Increase size from AWS Console
 Extend partition
 Extend filesystem
 Verify storage growth
+============================================================================================================
 Task 5
-
 Production Troubleshooting Lab.
-
 Scenario:
-
 Application team reports "Disk Full".
-
 Tasks:
-
 Identify affected partition.
 Check storage utilization.
 Increase EBS size.
 Extend filesystem.
 Verify application functionality.
 Skills Gained
-
+============================================================================================================
 After completing this lab, you will understand:
-
 ✅ AWS EBS Architecture
-
 ✅ EBS Volume Types
-
 ✅ Linux Storage Management
-
 ✅ Volume Creation & Attachment
-
 ✅ File System Management
-
 ✅ Persistent Mounting
-
 ✅ EBS Volume Expansion
-
 ✅ Production Troubleshooting
-
 ✅ Real-Time DevOps & Cloud Operations Tasks
