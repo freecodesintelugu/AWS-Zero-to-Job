@@ -1,0 +1,209 @@
+AWS IAM (Identity and Access Management) - Complete Guide
+Overview
+AWS Identity and Access Management (IAM) is a global AWS service that helps securely control access to AWS resources.
+Using IAM, organizations can:
+•	Create users and groups 
+•	Assign permissions 
+•	Control resource access 
+•	Implement security best practices 
+•	Follow the Principle of Least Privilege 
+IAM is the foundation of AWS security and is one of the first services every cloud engineer should learn.
+________________________________________
+Learning Objectives
+After completing this module, you will understand:
+•	Root User vs IAM User 
+•	Multi-Factor Authentication (MFA) 
+•	IAM Dashboard 
+•	Account Alias 
+•	Password Policies 
+•	IAM Groups 
+•	IAM Policies 
+•	Inline Policies 
+•	AWS Managed Policies 
+•	Customer Managed Policies 
+•	AWS CLI Authentication 
+•	Policy Simulator 
+•	Real-world IAM Implementation 
+________________________________________
+Root User
+What is Root User?
+The Root User is created automatically when an AWS account is created.
+Features
+•	Full administrative access 
+•	Can access all AWS services 
+•	Cannot be restricted using IAM policies 
+•	One root user per AWS account 
+Real-Time Example
+Think of the Root User as:
+•	Cricket Team Captain 
+•	College Principal 
+•	Company Owner 
+They have complete authority.
+Best Practices
+✅ Enable MFA
+✅ Create an IAM Administrator User
+✅ Avoid daily login using Root User
+________________________________________
+Multi-Factor Authentication (MFA)
+What is MFA?
+MFA adds an additional security layer beyond username and password.
+Authentication Methods
+•	Google Authenticator 
+•	Microsoft Authenticator 
+•	Security Key 
+•	Fingerprint Authentication 
+Benefits
+•	Protects against password theft 
+•	Prevents unauthorized access 
+•	Improves account security 
+________________________________________
+IAM User
+What is an IAM User?
+An IAM User represents an individual person or application that needs access to AWS resources.
+Examples
+Developer:
+•	EC2 Access 
+•	S3 Access 
+Database Administrator:
+•	RDS Access 
+•	Database Management 
+Tester:
+•	Read-Only Access 
+Principle Used
+Least Privilege Principle
+Users receive only the permissions necessary to perform their tasks.
+________________________________________
+IAM Groups
+What is an IAM Group?
+A collection of IAM users with identical permissions.
+Example
+Developers Group
+Users:
+•	Developer1 
+•	Developer2 
+•	Developer3 
+Permission:
+•	AmazonS3ReadOnlyAccess 
+Benefits:
+•	Easier administration 
+•	Centralized permission management 
+•	Reduced operational overhead 
+________________________________________
+IAM Policies
+What is a Policy?
+A Policy is a JSON document that defines permissions.
+Policies determine:
+•	What actions are allowed 
+•	What actions are denied 
+•	Which resources can be accessed 
+________________________________________
+Types of Policies
+1. AWS Managed Policies
+Pre-created and maintained by AWS.
+Examples:
+•	AmazonS3FullAccess 
+•	AmazonEC2FullAccess 
+•	AdministratorAccess 
+________________________________________
+2. Customer Managed Policies
+Custom policies created by organizations.
+Advantages:
+•	Fine-grained access control 
+•	Reusable across multiple users 
+________________________________________
+3. Inline Policies
+Policies attached directly to:
+•	User 
+•	Group 
+•	Role 
+Used for:
+•	Unique permissions 
+•	Temporary access requirements 
+________________________________________
+Policy Structure
+Every IAM policy contains:
+Service
+AWS service being controlled.
+Examples:
+•	S3 
+•	EC2 
+•	VPC 
+•	RDS 
+________________________________________
+Effect
+Defines the outcome.
+Values:
+•	Allow 
+•	Deny 
+________________________________________
+Action
+Operations users can perform.
+Examples:
+•	s3:GetObject 
+•	s3:PutObject 
+•	ec2:StartInstances 
+•	ec2:StopInstances 
+________________________________________
+Resource
+Specific AWS resource.
+Examples:
+•	S3 Bucket 
+•	EC2 Instance 
+•	RDS Database 
+________________________________________
+Practical Example
+User 1
+Username:
+s3admin
+Permission:
+AmazonS3FullAccess
+________________________________________
+User 2
+Username:
+ec2admin
+Permission:
+AmazonEC2FullAccess
+________________________________________
+AWS CLI Authentication
+Install AWS CLI
+Verify installation:
+aws --version
+Configure AWS CLI:
+aws configure
+Provide:
+AWS Access Key ID
+AWS Secret Access Key
+Region
+Output Format
+________________________________________
+Policy Simulator
+AWS IAM provides a Policy Simulator tool.
+Used to:
+•	Validate permissions 
+•	Troubleshoot access issues 
+•	Test policies before production deployment 
+________________________________________
+Real-Time Enterprise Environment
+Organizations typically separate workloads into multiple AWS accounts.
+Examples:
+•	POC Account 
+•	Development Account 
+•	UAT Account 
+•	Production Account 
+Benefits:
+•	Security 
+•	Isolation 
+•	Compliance 
+•	Cost Management 
+________________________________________
+AWS IAM Best Practices
+✅ Enable MFA for Root User
+✅ Create IAM Admin User
+✅ Avoid Root User for daily activities
+✅ Follow Least Privilege Principle
+✅ Use Groups for permission management
+✅ Rotate Access Keys regularly
+✅ Remove unused users
+✅ Enable password policies
+✅ Monitor IAM activity using CloudTrail
+

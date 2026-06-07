@@ -1,0 +1,41 @@
+AWS IAM Interview Questions & Answers
+Q1. What is AWS IAM?
+IAM (Identity and Access Management) is an AWS service used to securely manage authentication and authorization for AWS resources.
+________________________________________
+Q2. Difference between Root User and IAM User?
+Root User
+•	Full account access 
+•	Created during signup 
+•	One per account 
+IAM User
+•	Limited permissions 
+•	Created by administrators 
+•	Multiple users possible 
+________________________________________
+Q3. What is MFA?
+Multi-Factor Authentication provides an additional security layer by requiring another verification method besides a password.
+________________________________________
+Q4. What is the Principle of Least Privilege?
+Grant only the minimum permissions required for a user to perform their tasks.
+________________________________________
+Q5. What is an IAM Group?
+A collection of IAM users sharing the same permissions.
+________________________________________
+Q6. What is an IAM Policy?
+A JSON document defining permissions for AWS resources.
+________________________________________
+Q7. What are AWS Managed Policies?
+Pre-built policies maintained by AWS.
+Example:
+AmazonS3FullAccess
+________________________________________
+Q8. What are Inline Policies?
+Policies directly attached to a single user, group, or role.
+________________________________________
+Q9. What is the purpose of Policy Simulator?
+To test and validate IAM permissions before deployment.
+________________________________________
+Q10. How do you disable AWS Console access for a user?
+Navigate:
+IAM → User → Security Credentials → Console Sign-in → Disable
+

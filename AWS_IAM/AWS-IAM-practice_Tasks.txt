@@ -1,0 +1,43 @@
+Hands-On Practice Tasks
+Task 1 - Create an S3 Administrator
+Objective:
+Create user:
+s3admin
+Attach:
+AmazonS3FullAccess
+Verify login and bucket creation.
+________________________________________
+Task 2 - Create an EC2 Administrator
+Objective:
+Create user:
+ec2admin
+Attach:
+AmazonEC2FullAccess
+Verify instance creation.
+________________________________________
+Task 3 - Create a Developers Group
+Objective:
+1.	Create Developers Group 
+2.	Attach AmazonS3ReadOnlyAccess 
+3.	Create 3 users 
+4.	Add users to group 
+5.	Verify access 
+________________________________________
+Task 4 - Create a Custom Policy
+Objective:
+Allow only:
+s3:GetObject
+on a specific S3 bucket.
+Verify users cannot upload or delete objects.
+________________________________________
+Task 5 - Configure AWS CLI
+Objective:
+1.	Generate Access Key 
+2.	Install AWS CLI 
+3.	Run: 
+aws configure
+4.	Verify: 
+aws s3 ls
+Expected Result:
+Successfully list accessible S3 buckets.
+
