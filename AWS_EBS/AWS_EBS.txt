@@ -1,0 +1,134 @@
+AWS EBS (Elastic Block Store) Complete Guide
+Overview
+
+AWS Elastic Block Store (EBS) is a block-level storage service designed for Amazon EC2 instances. It works like a virtual hard disk attached to a server and provides persistent storage even if the EC2 instance is restarted.
+
+In this hands-on tutorial, we learn how to create, attach, format, mount, and extend EBS volumes in Linux-based EC2 instances.
+
+What You Will Learn
+1. Introduction to AWS EBS
+What is EBS?
+Difference between EBS and Instance Store
+Persistent Storage Concept
+Root Volume vs Additional Volume
+2. EBS Performance Metrics
+Storage Capacity
+IOPS (Input/Output Operations Per Second)
+Throughput
+Latency
+Block Size
+IOPS Formula
+IOPS = Throughput × 1024 / Block Size
+
+Example:
+
+Throughput = 250 MB/s
+Block Size = 16 KB
+
+IOPS = (250 × 1024) / 16
+IOPS = 16000
+EBS Volume Types
+SSD Volumes
+GP3 (General Purpose SSD)
+Most commonly used
+Web Applications
+DevOps Workloads
+Application Servers
+Databases
+GP2 (Legacy General Purpose SSD)
+Previous generation SSD
+IO1 / IO2 (Provisioned IOPS SSD)
+High Performance Databases
+Oracle
+SQL Server
+SAP Workloads
+Mission Critical Applications
+HDD Volumes
+ST1
+Big Data
+Log Processing
+Data Warehouses
+SC1
+Backup Storage
+Archive Storage
+Low-Cost Workloads
+Practical Demonstration
+Verify Existing Storage
+lsblk
+
+List all attached block devices.
+
+df -Th
+
+Check mounted storage and file system types.
+
+Create New EBS Volume
+
+Important:
+
+EBS Volume and EC2 Instance must be in the same Availability Zone.
+
+Steps:
+
+Create EBS Volume
+Attach to EC2 Instance
+Verify Attachment
+lsblk
+
+Example Device:
+
+/dev/nvme1n1
+Check File System
+file -s /dev/nvme1n1
+Create File System
+mkfs -t xfs /dev/nvme1n1
+Create Mount Point
+mkdir /newvol
+Mount Volume
+mount /dev/nvme1n1 /newvol
+
+Verify:
+
+df -Th
+Permanent Mount
+
+Temporary mounts disappear after reboot.
+
+Get mount information:
+
+tail -n 1 /etc/mtab
+
+Edit:
+
+vi /etc/fstab
+
+Paste the copied entry.
+
+Apply:
+
+mount -a
+
+Now the volume remains mounted even after restart.
+
+Extend Existing EBS Volume
+Increase Size from AWS Console
+
+Example:
+
+20 GB → 50 GB
+Extend Partition
+growpart /dev/nvme0n1 1
+Extend File System
+xfs_growfs -d /newvol
+
+Verify:
+
+df -Th
+Real-World Use Cases
+Application Servers
+Production Databases
+Jenkins Servers
+Kubernetes Worker Nodes
+Log Storage
+Backup Systems
+Disaster Recovery Environments

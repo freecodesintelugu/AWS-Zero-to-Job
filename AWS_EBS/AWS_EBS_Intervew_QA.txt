@@ -1,0 +1,68 @@
+Real-Time Interview Questions
+Scenario 1
+
+Your application server is running out of disk space in production. What steps will you take?
+
+Answer
+Verify disk usage
+df -Th
+Identify attached volumes
+lsblk
+Increase EBS size from AWS Console
+Extend partition
+growpart /dev/nvme0n1 1
+Extend filesystem
+xfs_growfs -d /mountpoint
+Verify new size
+df -Th
+Scenario 2
+
+A newly attached EBS volume is not visible inside Linux. How will you troubleshoot?
+
+Answer
+Verify volume attachment in AWS Console.
+Check Availability Zone.
+Run:
+lsblk
+Check kernel messages:
+dmesg | tail
+Reattach volume if necessary.
+Scenario 3
+
+Why do we use GP3 instead of GP2?
+
+Answer
+Better performance
+Independent IOPS configuration
+Lower cost
+Recommended by AWS
+Scenario 4
+
+What happens if you restart an EC2 instance?
+
+Answer
+EBS data remains available.
+Mounted volumes remain only if configured in /etc/fstab.
+Scenario 5
+
+Can you attach one EBS volume to an EC2 instance in another Availability Zone?
+
+Answer
+
+No.
+
+EBS Volume and EC2 Instance must be in the same Availability Zone.
+
+Scenario 6
+
+Your mounted volume disappeared after reboot. Why?
+
+Answer
+
+The mount was temporary.
+
+Need to configure:
+
+/etc/fstab
+
+for persistent mounting.
