@@ -1,10 +1,11 @@
 AWS EBS (Elastic Block Store) Complete Guide
+============================================================================================================
 Overview
 
 AWS Elastic Block Store (EBS) is a block-level storage service designed for Amazon EC2 instances. It works like a virtual hard disk attached to a server and provides persistent storage even if the EC2 instance is restarted.
 
 In this hands-on tutorial, we learn how to create, attach, format, mount, and extend EBS volumes in Linux-based EC2 instances.
-
+============================================================================================================
 What You Will Learn
 1. Introduction to AWS EBS
 What is EBS?
@@ -21,7 +22,7 @@ IOPS Formula
 IOPS = Throughput × 1024 / Block Size
 
 Example:
-
+============================================================================================================
 Throughput = 250 MB/s
 Block Size = 16 KB
 
@@ -63,20 +64,16 @@ df -Th
 Check mounted storage and file system types.
 
 Create New EBS Volume
-
 Important:
-
 EBS Volume and EC2 Instance must be in the same Availability Zone.
-
 Steps:
 
 Create EBS Volume
 Attach to EC2 Instance
 Verify Attachment
 lsblk
-
+============================================================================================================
 Example Device:
-
 /dev/nvme1n1
 Check File System
 file -s /dev/nvme1n1
