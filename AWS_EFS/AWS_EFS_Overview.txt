@@ -1,16 +1,14 @@
 Amazon EFS (Elastic File System) - Complete Guide
 Overview
-
+=======================================================================================================================================================
 Amazon Elastic File System (EFS) is a fully managed, serverless, and scalable Network File System (NFS) provided by AWS. It allows multiple Amazon EC2 instances, containers, and serverless applications to access the same file system simultaneously.
 
 Unlike Amazon EBS, which is attached to a single instance, Amazon EFS can be mounted on multiple compute resources at the same time, making it ideal for shared storage workloads.
 
 Amazon EFS automatically grows and shrinks as files are added or removed, eliminating the need for capacity planning.
-
+=======================================================================================================================================================
 Why Do We Need Amazon EFS?
-
 Traditional storage solutions often create challenges when multiple servers need access to the same files.
-
 Common Problems
 Files are stored locally on individual servers.
 Data synchronization becomes difficult.
@@ -24,30 +22,18 @@ High availability across Availability Zones
 Simplified storage management
 How Amazon EFS Works
 Step 1
-
 Create an Amazon EFS File System.
-
 Step 2
-
 AWS creates mount targets in selected Availability Zones.
-
 Step 3
-
 Attach or mount EFS to EC2 instances using NFS protocol.
-
 Step 4
-
 Multiple instances read and write data simultaneously.
-
 Step 5
-
 EFS automatically scales storage based on usage.
-
 Key Features
 Fully Managed
-
 AWS manages infrastructure, maintenance, patching, and availability.
-
 Elastic Scaling
 
 Storage automatically expands and shrinks.
