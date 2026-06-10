@@ -1,52 +1,36 @@
 Interview Questions (Real-Time Scenarios)
+======================================================================================================================================================
 Question 1
-
 Your application runs on Auto Scaling with 10 EC2 instances. Users upload files that must be available on every instance. Which storage service would you choose?
-
 Answer
-
 Amazon EFS because it provides shared storage across multiple EC2 instances.
 
 Question 2
-
 When would you choose EFS instead of EBS?
-
 Answer
-
 Choose EFS when multiple servers need simultaneous access to the same data.
-
 Choose EBS when storage is required for a single EC2 instance.
 
 Question 3
-
-A Kubernetes application running on EKS requires persistent shared storage for all pods. Which AWS storage service would you use?
-
+A Kubernetes application running on EKS requires persistent shared storagefor all pods. Which AWS storage service would you use?
 Answer
-
 Amazon EFS.
 
 Question 4
-
 Your company stores application logs for six months and accesses them rarely. Which EFS feature helps reduce costs?
-
 Answer
-
 Lifecycle Management with EFS Infrequent Access or Archive Storage.
 
 Question 5
-
 How do you secure EFS in production?
-
 Answer
 Enable encryption at rest
 Enable encryption in transit
 Restrict access using Security Groups
 Use IAM policies
 Enable AWS Backup
+
 Question 6
-
 Why is EFS considered highly available?
-
 Answer
-
 Because EFS stores data across multiple Availability Zones automatically.
