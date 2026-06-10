@@ -1,0 +1,184 @@
+Amazon EFS (Elastic File System) - Complete Guide
+Overview
+
+Amazon Elastic File System (EFS) is a fully managed, serverless, and scalable Network File System (NFS) provided by AWS. It allows multiple Amazon EC2 instances, containers, and serverless applications to access the same file system simultaneously.
+
+Unlike Amazon EBS, which is attached to a single instance, Amazon EFS can be mounted on multiple compute resources at the same time, making it ideal for shared storage workloads.
+
+Amazon EFS automatically grows and shrinks as files are added or removed, eliminating the need for capacity planning.
+
+Why Do We Need Amazon EFS?
+
+Traditional storage solutions often create challenges when multiple servers need access to the same files.
+
+Common Problems
+Files are stored locally on individual servers.
+Data synchronization becomes difficult.
+Scaling application servers causes file inconsistency.
+Managing shared storage manually increases operational overhead.
+Amazon EFS Solution
+Centralized shared storage
+Multiple EC2 access simultaneously
+Automatic storage scaling
+High availability across Availability Zones
+Simplified storage management
+How Amazon EFS Works
+Step 1
+
+Create an Amazon EFS File System.
+
+Step 2
+
+AWS creates mount targets in selected Availability Zones.
+
+Step 3
+
+Attach or mount EFS to EC2 instances using NFS protocol.
+
+Step 4
+
+Multiple instances read and write data simultaneously.
+
+Step 5
+
+EFS automatically scales storage based on usage.
+
+Key Features
+Fully Managed
+
+AWS manages infrastructure, maintenance, patching, and availability.
+
+Elastic Scaling
+
+Storage automatically expands and shrinks.
+
+Shared File System
+
+Multiple clients can access the same data.
+
+Multi-AZ Availability
+
+Data is replicated across Availability Zones.
+
+High Durability
+
+Designed for high durability and reliability.
+
+Security
+
+Supports IAM policies, encryption, and security groups.
+
+EFS Storage Classes
+Standard
+
+Frequently accessed files.
+
+Best For
+Active applications
+Production workloads
+Shared application storage
+Infrequent Access (IA)
+
+Lower-cost storage for less frequently used files.
+
+Best For
+Backup files
+Historical records
+Archived application data
+Archive
+
+Lowest storage cost option.
+
+Best For
+Compliance data
+Long-term retention
+Rarely accessed files
+Performance Modes
+General Purpose
+
+Default mode with low latency.
+
+Best For
+Web applications
+Content management systems
+Max I/O
+
+Supports high levels of parallel access.
+
+Best For
+Big Data workloads
+Analytics platforms
+Throughput Modes
+Elastic Throughput
+
+Automatically adjusts throughput.
+
+Provisioned Throughput
+
+User-defined throughput levels.
+
+Bursting Throughput
+
+Uses burst credits based on file system size.
+
+Security Features
+Encryption at Rest
+
+Uses AWS KMS.
+
+Encryption in Transit
+
+Protects data while moving between clients and EFS.
+
+Security Groups
+
+Controls NFS traffic access.
+
+IAM Policies
+
+Controls user permissions.
+
+EFS Integration with AWS Services
+Compute Services
+Amazon EC2
+Amazon ECS
+Amazon EKS
+AWS Fargate
+AWS Lambda
+Analytics
+Amazon EMR
+Amazon SageMaker
+DevOps
+AWS CodeBuild
+AWS CodePipeline
+Backup
+AWS Backup
+EFS vs EBS vs S3
+Feature	EFS	EBS	S3
+Storage Type	File	Block	Object
+Shared Access	Yes	No	Yes
+Multiple EC2 Access	Yes	Limited	Yes
+Auto Scaling	Yes	No	Yes
+Multi-AZ	Yes	No	Yes
+Use Case	Shared Storage	Databases	Backups & Static Content
+Real-Time Scenario
+E-Commerce Platform
+Environment
+Load Balancer
+Multiple EC2 Instances
+Product Image Uploads
+Challenge
+
+Customers upload product images through one server.
+
+Other servers cannot access those images.
+
+Solution
+
+All EC2 instances mount Amazon EFS.
+
+Result
+Shared access to uploaded images
+Consistent customer experience
+Easy horizontal scaling
+High availability

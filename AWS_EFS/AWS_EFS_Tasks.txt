@@ -1,0 +1,55 @@
+Hands-On Practice Tasks
+Task 1: Create an EFS File System
+
+Objective:
+
+Create EFS
+Configure mount targets
+Explore settings
+Task 2: Mount EFS on EC2
+
+Objective:
+
+Launch Linux EC2
+Install EFS utilities
+Mount EFS
+Create test files
+Task 3: Multi-Instance Shared Storage
+
+Objective:
+
+Launch two EC2 instances
+Mount same EFS
+Create file on Instance-1
+Verify on Instance-2
+
+Expected Result:
+Shared storage works successfully.
+
+Task 4: Auto Scaling + EFS
+
+Objective:
+
+Create Auto Scaling Group
+Attach EFS
+Verify new instances automatically access shared data
+Task 5: Configure EFS Lifecycle Policy
+
+Objective:
+
+Move files to Infrequent Access
+Monitor storage optimization
+Task 6: Enable Encryption
+
+Objective:
+
+Create encrypted EFS
+Test secure mounting
+Task 7: Mount EFS with ECS or EKS
+
+Objective:
+
+Use EFS as persistent storage for containers
+
+Expected Result:
+Data remains available even after containers restart.
