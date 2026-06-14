@@ -1,0 +1,102 @@
+Hands-On Practice Tasks
+Task 1: Basic ALB Setup
+
+Objective:
+Create an ALB with two EC2 instances.
+
+Steps:
+
+Launch 2 EC2 instances.
+Install Apache.
+Create Target Group.
+Create ALB.
+Verify traffic distribution.
+
+Expected Outcome:
+Traffic alternates between servers.
+
+Task 2: Health Check Testing
+
+Objective:
+Understand ALB health checks.
+
+Steps:
+
+Stop Apache on one instance.
+Wait for health check failure.
+Observe Target Group status.
+
+Expected Outcome:
+Instance becomes unhealthy.
+
+Task 3: Multi-AZ Deployment
+
+Objective:
+Achieve High Availability.
+
+Steps:
+
+Launch servers in different Availability Zones.
+Register both servers.
+Access application through ALB.
+
+Expected Outcome:
+Application remains available even if one AZ fails.
+
+Task 4: Path-Based Routing
+
+Objective:
+Route traffic to different applications.
+
+Steps:
+
+Create TG-80.
+Create TG-8080.
+Configure ALB Listener Rules.
+Test:
+/app/*
+/api/*
+
+Expected Outcome:
+Traffic reaches correct backend application.
+
+Task 5: Security Best Practices
+
+Objective:
+Secure backend servers.
+
+Steps:
+
+Create ALB Security Group.
+Create Web Server Security Group.
+Allow inbound traffic only from ALB SG.
+Test connectivity.
+
+Expected Outcome:
+Users can access application only through ALB.
+
+Task 6: Failure Simulation
+
+Objective:
+Understand Fault Tolerance.
+
+Steps:
+
+Stop one EC2 instance.
+Observe ALB health status.
+Send traffic through ALB.
+
+Expected Outcome:
+Users continue accessing application through healthy servers.
+
+Task 7: Mini Real-Time Project
+
+Build an E-Commerce Architecture:
+
+/shop/*     → Product Servers
+/cart/*     → Cart Servers
+/payment/*  → Payment Servers
+/admin/*    → Admin Portal
+
+Expected Outcome:
+One ALB routes traffic to multiple applications using Path-Based Routing.

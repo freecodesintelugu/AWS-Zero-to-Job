@@ -1,0 +1,124 @@
+Real-Time Interview Questions and Answers
+Scenario 1
+Question
+
+Your company website receives heavy traffic during a sale event. One EC2 instance becomes overloaded. What scaling method would you recommend?
+
+Answer
+
+Step 1:
+Identify whether the issue is resource limitation or traffic growth.
+
+Step 2:
+For temporary resource shortage:
+
+Use Vertical Scaling.
+
+Step 3:
+For long-term traffic growth:
+
+Use Horizontal Scaling.
+
+Step 4:
+Deploy multiple instances behind ALB.
+
+Step 5:
+Use Auto Scaling to automatically add servers.
+
+Result:
+Application remains highly available during peak traffic.
+
+Scenario 2
+Question
+
+One EC2 instance fails unexpectedly. How does ALB handle the situation?
+
+Answer
+
+Step 1:
+ALB performs health checks.
+
+Step 2:
+Instance fails health check.
+
+Step 3:
+Unhealthy threshold is reached.
+
+Step 4:
+ALB marks instance as unhealthy.
+
+Step 5:
+Traffic is redirected to healthy instances.
+
+Result:
+No downtime for users.
+
+Scenario 3
+Question
+
+Your organization hosts a website and APIs on the same domain. How can ALB help?
+
+Answer
+
+Step 1:
+Create Target Group for Website.
+
+Step 2:
+Create Target Group for APIs.
+
+Step 3:
+Configure Path-Based Routing.
+
+Example:
+
+/app/*  → TG-Web
+/api/*  → TG-API
+
+Step 4:
+ALB routes traffic automatically.
+
+Result:
+Single Load Balancer manages multiple applications.
+
+Scenario 4
+Question
+
+Why should web servers allow traffic only from the ALB Security Group?
+
+Answer
+
+Step 1:
+Users access ALB only.
+
+Step 2:
+ALB forwards traffic to EC2 instances.
+
+Step 3:
+Direct public access to EC2 is blocked.
+
+Benefits:
+
+Improved Security
+Reduced Attack Surface
+Better Network Control
+Scenario 5
+Question
+
+A health check is configured every 10 seconds. The server fails two consecutive checks. What happens?
+
+Answer
+
+Step 1:
+ALB detects failures.
+
+Step 2:
+Unhealthy threshold reaches 2.
+
+Step 3:
+Instance becomes unhealthy.
+
+Step 4:
+Traffic is stopped to that instance.
+
+Step 5:
+Only healthy instances receive requests.

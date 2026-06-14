@@ -1,0 +1,80 @@
+AWS Application Load Balancer (ALB) – Complete Hands-On Guide
+
+This repository contains a practical implementation of AWS Application Load Balancer (ALB) with EC2 instances, Target Groups, Health Checks, and Path-Based Routing. The project demonstrates how organizations build highly available and scalable applications by distributing traffic across multiple servers.
+
+What You Will Learn
+Vertical Scaling vs Horizontal Scaling
+AWS Elastic Load Balancer (ELB) Overview
+Application Load Balancer (ALB)
+Health Checks and Monitoring
+Target Groups
+Round Robin Traffic Distribution
+Path-Based Routing
+Security Group Configuration
+Multi-AZ Deployment
+Real-Time Enterprise Use Cases
+Architecture Overview
+Users
+  |
+  V
+Application Load Balancer
+  |
+--------------------------------
+|                              |
+/app/*                    /api/*
+|                              |
+TG-80                     TG-8080
+|                              |
+Server-1                  Server-3
+Server-2                  Server-4
+Key Components
+EC2 Instances
+
+Two web servers are deployed in separate Availability Zones:
+
+ap-south-1a
+ap-south-1b
+
+This ensures high availability and fault tolerance.
+
+Target Groups
+
+Target Groups act as logical groups of backend servers.
+
+Examples:
+
+TG-80 → Web Application
+TG-8080 → API Application
+Health Checks
+
+ALB continuously checks server health.
+
+Example Configuration:
+
+Path: /index.html
+Port: 80
+Interval: 10 seconds
+
+If a server becomes unhealthy, ALB automatically removes it from traffic rotation.
+
+Path-Based Routing
+
+ALB routes traffic based on URL paths.
+
+Example:
+
+/app/* → Customer Portal
+/api/* → API Servers
+/admin/* → Admin Dashboard
+Real-Time Organization Use Case
+
+Consider a Banking Application:
+
+Customer Portal
+bank.com/app/*
+API Services
+bank.com/api/*
+Admin Dashboard
+bank.com/admin/*
+
+A single ALB intelligently routes requests to the correct backend services, improving scalability, performance, and cost optimization.
