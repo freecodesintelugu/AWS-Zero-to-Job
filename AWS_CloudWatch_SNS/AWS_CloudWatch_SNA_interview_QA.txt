@@ -1,0 +1,114 @@
+Real-Time Interview Questions and Answers
+Scenario 1
+Question
+
+Production EC2 CPU utilization suddenly increases to 95%. How would you handle the situation?
+
+Answer
+
+Step 1:
+Check CloudWatch metrics.
+
+Step 2:
+Verify whether the issue is traffic-related.
+
+Step 3:
+Review application logs.
+
+Step 4:
+Confirm Auto Scaling status.
+
+Step 5:
+Scale infrastructure if necessary.
+
+Step 6:
+Monitor recovery using CloudWatch dashboards.
+
+Scenario 2
+Question
+
+Users report website slowness, but EC2 CPU usage is normal. What would you check?
+
+Answer
+
+Step 1:
+Check ALB metrics.
+
+Step 2:
+Review application logs.
+
+Step 3:
+Check RDS performance metrics.
+
+Step 4:
+Verify network latency.
+
+Step 5:
+Analyze CloudWatch Logs Insights.
+
+Scenario 3
+Question
+
+How would you receive alerts whenever disk utilization exceeds 85%?
+
+Answer
+
+Step 1:
+Install CloudWatch Agent.
+
+Step 2:
+Collect disk metrics.
+
+Step 3:
+Create CloudWatch Alarm.
+
+Step 4:
+Configure SNS Topic.
+
+Step 5:
+Subscribe email recipients.
+
+Step 6:
+Test alarm functionality.
+
+Scenario 4
+Question
+
+An SNS email notification is not received after an alarm triggers. How do you troubleshoot?
+
+Answer
+
+Step 1:
+Verify SNS subscription confirmation.
+
+Step 2:
+Check CloudWatch alarm state.
+
+Step 3:
+Review SNS delivery metrics.
+
+Step 4:
+Check spam folder.
+
+Step 5:
+Verify topic permissions.
+
+Step 6:
+Publish test message manually.
+
+Scenario 5
+Question
+
+How would you monitor a multi-tier application in AWS?
+
+Answer
+
+Monitor:
+
+EC2 Metrics
+ALB Metrics
+RDS Metrics
+Application Logs
+Auto Scaling Metrics
+
+Create centralized dashboards and configure SNS notifications for critical alarms.

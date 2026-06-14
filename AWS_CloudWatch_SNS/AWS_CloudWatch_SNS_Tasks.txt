@@ -1,0 +1,75 @@
+Hands-On Practice Tasks
+Task 1: CPU Monitoring
+
+Objective:
+Create a CloudWatch alarm for EC2 CPU utilization.
+
+Steps:
+
+Launch EC2 instance.
+Create SNS topic.
+Subscribe email.
+Create alarm for CPU > 80%.
+Generate CPU load.
+Verify email alert.
+Task 2: Memory Monitoring
+
+Objective:
+Monitor EC2 memory utilization.
+
+Steps:
+
+Install CloudWatch Agent.
+Configure memory metrics.
+Create alarm at 75%.
+Connect SNS notifications.
+Test alerts.
+Task 3: Disk Space Monitoring
+
+Objective:
+Receive alerts when disk usage exceeds 85%.
+
+Steps:
+
+Configure CloudWatch Agent.
+Publish disk metrics.
+Create alarm.
+Trigger disk utilization.
+Verify notifications.
+Task 4: Auto Scaling Alerting
+
+Objective:
+Monitor Auto Scaling events.
+
+Steps:
+
+Create Auto Scaling Group.
+Configure scaling policies.
+Create CloudWatch alarms.
+Attach SNS notifications.
+Generate load.
+Observe scaling activities.
+Task 5: Production Monitoring Dashboard
+
+Objective:
+Build a centralized monitoring dashboard.
+
+Include:
+
+EC2 CPU Usage
+Memory Usage
+Disk Usage
+Network Traffic
+RDS Metrics
+Alarm Status
+Key Takeaway
+
+CloudWatch is responsible for Monitoring and Detection.
+
+SNS is responsible for Notification and Communication.
+
+Together they form a complete monitoring and alerting solution used by DevOps, Cloud Engineers, SREs, and Operations Teams in real-world AWS production environments.
+
+Monitoring Flow
+
+Resource → CloudWatch → Alarm → SNS → DevOps Team → Resolution 🚀

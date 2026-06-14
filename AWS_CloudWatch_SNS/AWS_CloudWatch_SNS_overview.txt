@@ -1,0 +1,130 @@
+AWS CloudWatch & SNS - Complete Overview
+📌 Introduction
+
+AWS CloudWatch and Amazon SNS are two essential AWS services used for monitoring, alerting, and automation in cloud environments.
+
+AWS CloudWatch
+
+Amazon CloudWatch is a monitoring and observability service that provides visibility into AWS resources, applications, and infrastructure. It collects metrics, logs, and events from AWS services and helps teams monitor system health and performance.
+
+Amazon SNS (Simple Notification Service)
+
+Amazon SNS is a fully managed messaging service that delivers notifications to subscribers through Email, SMS, Mobile Push Notifications, Lambda Functions, HTTP Endpoints, and more.
+
+When CloudWatch and SNS are integrated, organizations can automatically detect issues and notify the appropriate teams in real time.
+
+Why CloudWatch and SNS are Important
+
+In traditional environments, administrators manually check server health and application logs.
+
+This approach causes:
+
+Delayed issue detection
+Increased downtime
+Poor customer experience
+Slow incident response
+
+CloudWatch continuously monitors resources, while SNS instantly notifies teams when issues occur.
+
+Benefits
+
+✅ Real-time Monitoring
+
+✅ Automated Alerting
+
+✅ Reduced Downtime
+
+✅ Improved Reliability
+
+✅ Faster Incident Response
+
+✅ Better Operational Visibility
+
+How CloudWatch and SNS Work Together
+EC2 Instance
+     │
+     ▼
+CloudWatch Metrics
+     │
+     ▼
+CloudWatch Alarm
+     │
+     ▼
+SNS Topic
+     │
+ ┌───┼────┐
+ ▼   ▼    ▼
+Email SMS Lambda
+Workflow
+
+Step 1:
+CloudWatch collects metrics from AWS resources.
+
+Step 2:
+CloudWatch Alarm evaluates predefined thresholds.
+
+Step 3:
+When the threshold is breached, the alarm changes state.
+
+Step 4:
+SNS receives the alarm notification.
+
+Step 5:
+SNS sends alerts to subscribed users or systems.
+
+Real-Time Production Scenario
+E-Commerce Application Monitoring
+
+A company hosts its online shopping application on EC2 instances.
+
+During a festival sale:
+
+Traffic increases significantly.
+CPU utilization reaches 90%.
+Website response time becomes slow.
+Monitoring Process
+CloudWatch continuously monitors CPU Utilization.
+Alarm threshold is configured at 80%.
+CPU crosses 80% for five minutes.
+CloudWatch triggers the alarm.
+SNS sends an email notification.
+DevOps team receives the alert.
+Auto Scaling adds new EC2 instances.
+Application performance returns to normal.
+Business Impact
+No service interruption
+Better customer experience
+Reduced revenue loss
+Faster incident resolution
+Common Production Use Cases
+Infrastructure Monitoring
+EC2 CPU Monitoring
+Memory Monitoring
+Disk Space Monitoring
+Network Monitoring
+Application Monitoring
+Error Rate Tracking
+Response Time Monitoring
+API Monitoring
+Security Monitoring
+Failed Login Attempts
+Unauthorized Access Detection
+Security Alerts
+Database Monitoring
+RDS CPU Utilization
+Storage Usage
+Connection Monitoring
+Cost Monitoring
+AWS Budget Alerts
+Resource Usage Notifications
+Best Practices
+CloudWatch
+Create meaningful alarm thresholds.
+Use dashboards for visibility.
+Enable detailed monitoring for critical workloads.
+Monitor application logs.
+SNS
+Use separate topics for different environments.
+Configure multiple subscribers.
+Test notification delivery regularly.
+Integrate SNS with Lambda for automation.
