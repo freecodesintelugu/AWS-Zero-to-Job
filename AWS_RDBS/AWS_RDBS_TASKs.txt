@@ -1,0 +1,279 @@
+Amazon RDS Hands-on Lab (Practice Tasks)
+==================================================================================
+Task 1: Create a VPC (Optional)
+
+Objective: Understand the network where RDS runs.
+
+Steps
+Create a VPC (10.0.0.0/16)
+Create:
+2 Public Subnets
+2 Private Subnets
+Attach an Internet Gateway
+Configure Route Tables
+Create a DB Subnet Group using the two private subnets
+
+Expected Outcome
+==================================================================================
+
+RDS can be launched inside private subnets.
+Task 2: Launch an EC2 Instance
+
+Objective: Use EC2 as the application server.
+
+Steps
+Launch an Amazon Linux 2023 instance
+Install MySQL client
+sudo dnf update -y
+sudo dnf install mariadb105 -y
+
+or
+
+sudo dnf install mysql -y
+
+Expected Outcome
+
+EC2 is ready to connect to RDS.
+
+
+==================================================================================
+
+Task 3: Create a MySQL RDS Instance
+Configuration
+
+Engine:
+
+MySQL
+
+Template:
+
+Free Tier
+
+DB Identifier:
+
+mydatabase
+
+Username:
+
+admin
+
+Password:
+
+Create your own
+
+Instance Class:
+
+db.t3.micro
+
+Storage:
+
+20 GB
+
+Public Access:
+
+No
+
+Security Group:
+
+Allow MySQL (3306) from EC2 Security Group only
+
+Backup Retention:
+
+7 Days
+
+Deletion Protection:
+
+Disabled (for practice)
+
+Expected Outcome
+
+RDS becomes Available.
+==================================================================================
+
+Task 4: Connect EC2 to RDS
+
+Find
+
+RDS Endpoint
+
+Connect
+
+mysql -h <RDS-ENDPOINT> \
+-u admin \
+-p
+
+Expected
+
+mysql>
+
+==================================================================================
+
+Task 5: Create a Database
+CREATE DATABASE company;
+
+Verify
+
+SHOW DATABASES;
+==================================================================================
+
+Task 6: Use the Database
+USE company;
+==================================================================================
+
+Task 7: Create a Table
+CREATE TABLE employees (
+
+id INT PRIMARY KEY,
+
+name VARCHAR(50),
+
+department VARCHAR(30),
+
+salary INT
+
+);
+
+Verify
+
+SHOW TABLES;
+Task 8: Insert Records
+INSERT INTO employees VALUES
+(1,'Sai','DevOps',60000),
+(2,'Ravi','Cloud',70000),
+(3,'Anil','Testing',45000),
+(4,'Ram','Developer',80000),
+(5,'Ajay','HR',50000);
+
+Verify
+
+SELECT * FROM employees;
+==================================================================================
+
+Task 9: Practice SQL Queries
+
+Try these queries:
+
+SELECT * FROM employees;
+SELECT name FROM employees;
+SELECT * FROM employees
+WHERE salary > 60000;
+UPDATE employees
+SET salary=90000
+WHERE id=2;
+DELETE FROM employees
+WHERE id=5;
+==================================================================================
+
+Task 10: Create a Manual Snapshot
+
+Console
+
+RDS
+
+↓
+
+Databases
+
+↓
+
+Actions
+
+↓
+
+Take Snapshot
+
+Wait until
+
+Available
+
+Restore the snapshot.
+==================================================================================
+
+
+Task 11: Restore Database
+
+Restore the snapshot as
+
+company-restore
+
+Verify
+
+Data exists
+Tables exist
+Task 12: Modify Database Size
+
+Modify
+
+db.t3.micro
+
+↓
+
+db.t3.small
+
+Observe
+
+Reboot
+Status Changes
+New Instance Class
+==================================================================================
+
+Task 13: Enable Storage Autoscaling
+
+Modify
+
+Storage
+
+↓
+
+Enable Storage Autoscaling
+
+Set
+
+Maximum Storage
+
+100 GB
+Task 14: Enable Multi-AZ
+
+Modify
+
+Single AZ
+
+↓
+
+Multi-AZ
+
+Observe
+
+Primary
+
+↓
+
+Standby
+
+Understand
+
+Automatic Failover
+
+Task 15: Create a Read Replica
+
+Console
+
+Actions
+
+↓
+
+Create Read Replica
+
+Observe
+
+Primary
+
+↓
+
+Replica
+
+Run
+
+SELECT * FROM employees;
+
+from Replica.

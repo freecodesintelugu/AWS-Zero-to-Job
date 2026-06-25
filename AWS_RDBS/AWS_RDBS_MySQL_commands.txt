@@ -1,0 +1,82 @@
+# Connect to Amazon RDS MySQL
+mysql -h database.ctiqkmkew1m4.ap-south-1.rds.amazonaws.com -u admin -p 
+
+-- Show all databases
+SHOW DATABASES;
+
+-- Create a new database
+CREATE DATABASE companydb;
+
+-- Verify the database
+SHOW DATABASES;
+
+-- Select the database
+USE companydb;
+
+-- Check the current database
+SELECT DATABASE();
+
+-- Create a table
+CREATE TABLE employees (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50),
+    department VARCHAR(50),
+    salary DECIMAL(10,2)
+);
+
+-- Show all tables
+SHOW TABLES;
+
+-- Display table structure
+DESC employees;
+
+-- Insert multiple records
+INSERT INTO employees (name, department, salary)
+VALUES
+('Sai', 'Cloud', 50000),
+('Rahul', 'DevOps', 60000),
+('Kiran', 'Security', 70000);
+
+-- View all records
+SELECT * FROM employees;
+
+-- Insert another record
+INSERT INTO employees (name, department, salary)
+VALUES ('Ramesh', 'AWS', 80000);
+
+-- View data
+SELECT * FROM employees;
+
+-- Update a record
+UPDATE employees
+SET salary = 85000
+WHERE id = 4;
+
+-- View updated data
+SELECT * FROM employees;
+
+-- Delete a record
+DELETE FROM employees
+WHERE id = 2;
+
+-- View remaining records
+SELECT * FROM employees;
+
+-- Count total records
+SELECT COUNT(*) FROM employees;
+
+-- Search records
+SELECT * FROM employees
+WHERE department = 'AWS';
+
+-- Show table structure
+DESCRIBE employees;
+
+-- Show all databases
+SHOW DATABASES;
+
+-- Show all tables
+SHOW TABLES;
+
+-- Exit MySQL
+EXIT;

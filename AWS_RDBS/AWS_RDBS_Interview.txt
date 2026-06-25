@@ -1,0 +1,91 @@
+Scenario-Based Interview Questions
+
+Scenario 1
+================================================================================
+Application becomes slow.
+How do you troubleshoot?
+Answer
+Check CloudWatch metrics
+Check CPU usage
+Check memory
+Check slow queries
+Check storage IOPS
+Verify indexes
+Consider Read Replica
+================================================================================
+Scenario 2
+
+Database storage reaches 95%.
+
+What do you do?
+
+Answer
+
+Enable Storage Auto Scaling
+Increase allocated storage
+Delete unnecessary data
+Archive old records
+
+================================================================================
+Scenario 3
+
+Primary database fails.
+
+What happens?
+
+Answer
+
+If Multi-AZ is enabled
+
+AWS automatically promotes the standby instance.
+
+Application reconnects using the same endpoint.
+================================================================================
+Scenario 4
+Read traffic suddenly increases.
+
+Solution?
+
+Answer
+
+Create Read Replicas and direct read-only queries to them.
+================================================================================
+Scenario 5
+You need a backup before upgrading the database.
+Solution?
+
+Create a Manual DB Snapshot.
+================================================================================
+Scenario 6
+Developers accidentally delete records.
+
+How do you recover?
+
+Answer
+
+Use Point-in-Time Recovery or restore from a DB Snapshot.
+================================================================================
+Scenario 7
+Only EC2 instances should access the database.
+
+How?
+
+Answer
+
+Configure the RDS Security Group to allow inbound access only from the EC2 Security Group.
+================================================================================
+Scenario 8
+
+The application cannot connect to RDS.
+
+Checklist:
+
+Database status
+Security Groups
+NACLs
+Route tables
+DB endpoint
+Username/password
+Database port (3306 for MySQL, 5432 for PostgreSQL)
+Public/Private accessibility
+DNS resolution
